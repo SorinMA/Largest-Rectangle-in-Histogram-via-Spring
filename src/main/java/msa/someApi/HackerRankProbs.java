@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SomeApiApplication {
+public class HackerRankProbs {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SomeApiApplication.class, args);
+		SpringApplication.run(HackerRankProbs.class, args);
 	}
 
 }

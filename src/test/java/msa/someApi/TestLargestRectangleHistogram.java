@@ -17,14 +17,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import msa.someApi.REST.GetWelcome;
+import msa.someApi.REST.LargestRectangleHistogram;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestApi {
+public class TestLargestRectangleHistogram {
 
 	@Autowired
-	private GetWelcome controller;
+	private LargestRectangleHistogram controller;
 
 	@Test
 	public void contextLoads() throws Exception {
@@ -36,14 +36,14 @@ public class TestApi {
 
 	@Test
 	public void testGetWithName() throws Exception {
-		this.mockMvc.perform(get("/?name=Sorin")).andDo(print()).andExpect(status().isOk())
+		this.mockMvc.perform(get("/largestRectangleInHistogram?name=Sorin")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().string(containsString(
 						"Hello Sorin ! Welcome to Largest Rectangle in Histogram: Given an array of integers A of size N. A represents a histogram i.e A[i] denotes height of the ith histogram s bar. Width of each bar is 1.")));
 	}
 
 	@Test
 	public void testGetWithoutName() throws Exception {
-		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
+		this.mockMvc.perform(get("/largestRectangleInHistogram")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().string(containsString(
 						"Hello user ! Welcome to Largest Rectangle in Histogram: Given an array of integers A of size N. A represents a histogram i.e A[i] denotes height of the ith histogram s bar. Width of each bar is 1.")));
 	}
@@ -51,7 +51,7 @@ public class TestApi {
 	@Test
 	public void testPost() throws Exception {
 		    
-		this.mockMvc.perform(post("/")
+		this.mockMvc.perform(post("/largestRectangleInHistogram")
             .contentType(MediaType.APPLICATION_JSON)
             .content("[1, 2, 3]"))
 			.andDo(print())
@@ -62,7 +62,7 @@ public class TestApi {
 	@Test
 	public void testPost2() throws Exception {
 		    
-		this.mockMvc.perform(post("/")
+		this.mockMvc.perform(post("/largestRectangleInHistogram")
             .contentType(MediaType.APPLICATION_JSON)
             .content("[1, 2, 3, 4, 1 , 1, 2, 2, 1, 2]"))
 			.andDo(print())

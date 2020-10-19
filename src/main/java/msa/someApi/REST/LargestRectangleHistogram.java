@@ -5,19 +5,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.io.IOException;
 import java.util.*;
 
 @RestController
-public class GetWelcome {
-
-	@RequestMapping("/")
-	public String helloHomePage(
-			@RequestParam(value = "name", defaultValue = "user") String name) {
+public class LargestRectangleHistogram {
+    @RequestMapping("/largestRectangleInHistogram")
+	public String largestRectangleInHistogram(
+			@RequestParam(value = "name", defaultValue = "user") String name) throws IOException {
 		return "Hello " + name + " ! Welcome to Largest Rectangle in Histogram: Given an array of integers A of size N. A represents a histogram i.e A[i] denotes height of the ith histogram s bar. Width of each bar is 1.";
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public int largestRectangleInHistogram(@RequestBody ArrayList<Integer> A) {
+	@RequestMapping(value = "/largestRectangleInHistogram", method = RequestMethod.POST)
+	public int largestRectangleInHistogram(@RequestBody ArrayList<Integer> A) throws IOException {
 		int maxArea = 0;
         int lenA = A.size();
         
@@ -74,6 +75,5 @@ public class GetWelcome {
         }
         
         return maxArea;
-	}
-
+    }
 }
