@@ -8,5 +8,4 @@ public class HackerRankProbs {
 	public static void main(String[] args) {
 		SpringApplication.run(HackerRankProbs.class, args);
 	}
-
 }
