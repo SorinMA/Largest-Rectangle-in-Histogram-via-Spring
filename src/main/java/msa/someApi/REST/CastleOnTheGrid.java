@@ -66,11 +66,6 @@ public class CastleOnTheGrid {
             int x;
             int y;
 
-            Node () {
-                this.x = 0;
-                this.y = 0;
-            }
-
             Node (int x, int y) {
                 this.x = x;
                 this.y = y;
